@@ -3,9 +3,7 @@ package com.sunsk.source.flinkTransFormation;
 
 import com.alibaba.fastjson.JSON;
 import com.sunsk.source.Student;
-import org.apache.flink.api.common.functions.FoldFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
-import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011;
