@@ -1,4 +1,4 @@
-package com.sunsk.source.custom;
+package com.sunsk.source;
 
 
 public class Student {

@@ -1,6 +1,7 @@
 package com.sunsk.source.custom;
 
 import com.alibaba.fastjson.JSON;
+import com.sunsk.source.Student;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -20,7 +21,7 @@ public class Main3 {
         props.put("auto.offset.reset", "latest");
 
         SingleOutputStreamOperator<Student> student = env.addSource(new FlinkKafkaConsumer011<>(
-                "test001",   //这个 kafka topic 需要和上面的工具类的 topic 一致
+                "test",   //这个 kafka topic 需要和上面的工具类的 topic 一致
                 new SimpleStringSchema(),
                 props)).setParallelism(1)
                 .map(string -> JSON.parseObject(string, Student.class)); //Fastjson 解析字符串成 student 对象
